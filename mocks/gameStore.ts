@@ -34,7 +34,7 @@ export async function getGameById(gameId: string): Promise<Game | null> {
 }
 
 export async function updateGame(
-	gameId: string,
+	gameId: string | undefined,
 	moves: string[]
 ): Promise<Game> {
 
