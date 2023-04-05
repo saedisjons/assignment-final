@@ -16,7 +16,6 @@ export async function createGame(
   secondPlayerName: string
 ): Promise<Game> {
   await prisma.$connect();
-
   const game = await prisma.game.create({
     data: {
       player1_name: playerName,
@@ -33,9 +32,9 @@ export async function getGameById(gameId: string): Promise<Game | null> {
 }
 
 export async function updateGame(
-  gameId: string,
+  gameId: string | undefined,
   moves: string[]
-): Promise<Game> {
+): Promise<Game | null> {
   await prisma.$connect();
   return await prisma.game.update({
     where: {
