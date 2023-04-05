@@ -25,6 +25,14 @@ const Home: NextPage = () => {
     }
   }
 
+  async function checkPlayerNameInput() {
+    //Check for the Name TextInput
+    if (!playerName.trim() || !secondPlayerName.trim()) {
+      alert('Please Enter Name');
+      return;
+    }
+  };
+
   return (
     <>
       <h1 className={styles.title}>Tic Tac Toe #️⃣</h1>
@@ -59,6 +67,7 @@ const Home: NextPage = () => {
           />
 
           <button
+            onClick={checkPlayerNameInput}
             className={styles.startButton}
             disabled={isCreating}
             type="submit"
