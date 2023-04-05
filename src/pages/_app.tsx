@@ -2,6 +2,24 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { datadogRum } from '@datadog/browser-rum';
+
+datadogRum.init({
+    applicationId: '8a92723f-e155-4850-be8d-056a21f0f31d',
+    clientToken: 'pub3e020d7fb55670f7b31c28648f72ec9b',
+    site: 'datadoghq.com',
+    service:'a-final',
+    env:'prod',
+    version: '1.0.0',
+    sessionSampleRate: 100,
+    sessionReplaySampleRate: 20,
+    trackUserInteractions: true,
+    trackResources: true,
+    trackLongTasks: true,
+    defaultPrivacyLevel:'mask-user-input'
+});
+    
+datadogRum.startSessionReplayRecording();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
