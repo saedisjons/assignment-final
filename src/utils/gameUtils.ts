@@ -23,6 +23,16 @@ export function calculateWinner(
   return null;
 }
 
+export function calculateTie(moves: Sign[] | string[]): Boolean | null | boolean {
+  console.log("In calculateTie");
+  console.log("X is: " + moves.filter((move) => move === Sign.X).length);
+  if (moves.filter((move) => move === Sign.X).length === 5) {
+    console.log("X is 5");
+    return true;
+  }
+  return null;
+}
+
 export function getPlayerNameFromSign(
   sign: Sign | string,
   game: Game
@@ -38,6 +48,9 @@ export function getPlayerNameFromSign(
 export function getWhosTurnItIs(moves: Sign[] | string[]): Sign | string {
   const numberOfX = moves.filter((move) => move === Sign.X).length;
   const numberOfO = moves.filter((move) => move === Sign.O).length;
+  if (numberOfO === 3) {
+    return Sign.X;
+  }
   if (numberOfX === 0) {
     return Sign.X;
   }
