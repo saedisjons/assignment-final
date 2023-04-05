@@ -1,5 +1,14 @@
 # Assignment Final
 
+[Production deployment](https://assignment-final-orpin.vercel.app)
+
+[Eslint Rule Repository](https://github.com/saedisjons/eslint-custom-rules)
+
+Datadog Dashboard:
+
+![DataDog Dashboard](https://i.imgur.com/IqSKS3k.png)
+
+
 #### The full circle
 
 ---
