@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getGameById, updateGame } from "./gameStore"
+import { getGameById, updateGame } from "../../gameStore"
 
 export default async function game(req: NextApiRequest, res: NextApiResponse) {
 	switch (req.method) {
