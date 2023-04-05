@@ -19,7 +19,7 @@ export default async function game(req: NextApiRequest, res: NextApiResponse) {
     case "PUT":
       try {
         const updatedGame = await updateGame(
-          req.query.id?.toString(),
+          ?.toString(),
           req.body.moves
         );
 
